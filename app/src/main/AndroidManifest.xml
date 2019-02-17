@@ -78,20 +78,23 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".Activities.Categories.AddCategories"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
-        <activity android:name=".Activities.Categories.AddSubCategory"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
-        <activity android:name=".Activities.Categories.AddChildCategories"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity
+            android:name=".Activities.Categories.AddCategories"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".Activities.Categories.AddSubCategory"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".Activities.Categories.AddChildCategories"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Activities.ImageCrop.TempActivity"
-            android:screenOrientation="portrait"
-           />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Activities.UploadProductsFile"></activity>
     </application>
 
 </manifest>

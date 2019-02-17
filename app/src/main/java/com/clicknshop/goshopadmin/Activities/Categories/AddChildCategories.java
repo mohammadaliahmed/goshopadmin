@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.clicknshop.goshopadmin.Activities.AddProduct;
+import com.clicknshop.goshopadmin.Activities.EditProduct;
 import com.clicknshop.goshopadmin.Models.ChildCategoryModel;
 import com.clicknshop.goshopadmin.R;
 import com.clicknshop.goshopadmin.Utils.CommonUtils;
@@ -120,6 +121,7 @@ public class AddChildCategories extends AppCompatActivity {
             @Override
             public void finishActivity(String category) {
                 AddProduct.category = category;
+                EditProduct.category=category;
                 AddCategories.fa.finish();
                 AddSubCategory.fa.finish();
                 finish();

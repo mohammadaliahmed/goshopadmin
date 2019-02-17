@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.bogdwellers:pinchtozoom:0.1'
     implementation 'com.github.Tofira:ImagePickerWithCrop:d918d3c4a6'
     implementation 'com.yalantis:ucrop:2.2.0'
+    implementation 'com.opencsv:opencsv:3.9'
 
 
 

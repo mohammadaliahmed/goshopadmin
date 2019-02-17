@@ -191,10 +191,19 @@ public class ListOfProducts extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        Intent i = new Intent(ListOfProducts.this, MainActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (item.getItemId() == android.R.id.home) {
 
+            Intent i = new Intent(ListOfProducts.this, MainActivity.class);
+            startActivity(i);
             finish();
         }
 

@@ -1,5 +1,6 @@
 package com.clicknshop.goshopadmin.Activities;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -342,6 +343,25 @@ public class AddProduct extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("RestrictedApi")
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add_product_menu, menu);
+        final MenuItem mAdd = menu.findItem(R.id.action_add);
+        mAdd.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                Intent i=new Intent(AddProduct.this,UploadProductsFile.class);
+                startActivity(i);
+
+                return false;
+            }
+        });
+
+        return true;
+
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -349,13 +369,13 @@ public class AddProduct extends AppCompatActivity {
 
             finish();
         }
+//        if (item.getItemId() == android.R.id.action_add) {
+//
+//            finish();
+//        }
+
+
 
         return super.onOptionsItemSelected(item);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
-
 }

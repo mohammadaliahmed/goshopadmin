@@ -21,15 +21,6 @@
             android:layout_margin="5dp"
             android:src="@drawable/placeholder" />
 
-        <TextView
-            android:id="@+id/category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_below="@id/image"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:text="asda" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayout"
@@ -111,6 +102,63 @@
                 android:hint="Cost Price"
                 android:textSize="12sp" />
         </android.support.design.widget.TextInputLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_background">
+
+            <TextView
+                android:id="@+id/categoryChoosen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="Choose Category"
+
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text=">"
+                android:textColor="#000"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_background">
+
+            <TextView
+                android:id="@+id/brandChosen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="Choose Brand"
+
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text=">"
+                android:textColor="#000"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <Button
             android:id="@+id/update"

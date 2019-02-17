@@ -141,13 +141,13 @@ public class AddCategories extends AppCompatActivity {
                         adapter.notifyDataSetChanged();
                     }
                 });
-                mDatabase.child("Categories").child("SubCategories").child(category).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        CommonUtils.showToast("Category Deleted");
-                        adapter.notifyDataSetChanged();
-                    }
-                });
+//                mDatabase.child("Categories").child("SubCategories").child(category).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        CommonUtils.showToast("Category Deleted");
+//                        adapter.notifyDataSetChanged();
+//                    }
+//                });
 
 
             }
