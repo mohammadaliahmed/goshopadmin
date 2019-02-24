@@ -13,6 +13,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.clicknshop.goshopadmin.Activities.EditProduct;
+import com.clicknshop.goshopadmin.Activities.SendNotifications;
 import com.clicknshop.goshopadmin.Models.Product;
 import com.clicknshop.goshopadmin.R;
 import com.bumptech.glide.Glide;
@@ -25,17 +26,19 @@ import java.util.Locale;
  */
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
+    int abc = 0;
     Context context;
     ArrayList<Product> productList;
     OnProductStatusChanged productStatusChanged;
     private ArrayList<Product> arrayList;
 
 
-    public ProductsAdapter(Context context, ArrayList<Product> productList, OnProductStatusChanged productStatusChanged) {
+    public ProductsAdapter(Context context, ArrayList<Product> productList, int abc, OnProductStatusChanged productStatusChanged) {
         this.context = context;
         this.productList = productList;
         this.productStatusChanged = productStatusChanged;
         this.arrayList = new ArrayList<>(productList);
+        this.abc = abc;
 
     }
 
@@ -104,12 +107,18 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
             }
         });
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, EditProduct.class);
-                i.putExtra("productId", model.getId());
-                context.startActivity(i);
+                if (abc == 0) {
+                    Intent i = new Intent(context, EditProduct.class);
+                    i.putExtra("productId", model.getId());
+                    context.startActivity(i);
+                } else {
+                    SendNotifications.product = model;
+                    productStatusChanged.finishActivity();
+                }
             }
         });
 
@@ -162,6 +171,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         public void onStatusChanged(View v, Product product, boolean status);
 
         public void deleteProduct(Product product);
+        public void finishActivity();
     }
 
 }

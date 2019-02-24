@@ -45,6 +45,8 @@ public class ListOfProducts extends AppCompatActivity {
     String category;
     DatabaseReference mDatabase;
     ProgressBar progress;
+    String from;
+    int abc = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +57,17 @@ public class ListOfProducts extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         this.setTitle("List of products");
+        from = getIntent().getStringExtra("from");
+        if (from!=null&&from.equalsIgnoreCase("notificationScreen")) {
+            abc = 1;
+        }
+
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
         recyclerView = findViewById(R.id.recycler_view_products);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new ProductsAdapter(this, productArrayList, new ProductsAdapter.OnProductStatusChanged() {
+        adapter = new ProductsAdapter(this, productArrayList, abc, new ProductsAdapter.OnProductStatusChanged() {
             @Override
             public void onStatusChanged(View v, Product product, final boolean status) {
                 mDatabase.child("Products").child(product.getId()).child("isActive").setValue("" + status).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -107,6 +115,11 @@ public class ListOfProducts extends AppCompatActivity {
                 AlertDialog dialog = builder.create();
                 dialog.show();
 
+            }
+
+            @Override
+            public void finishActivity() {
+                finish();
             }
         });
         recyclerView.setAdapter(adapter);

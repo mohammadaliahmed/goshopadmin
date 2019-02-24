@@ -4,46 +4,265 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activities.SendNotifications">
 
-    <android.support.design.widget.TextInputLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:id="@+id/abc"
-        android:layout_margin="10dp">
+        android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/notificationTitle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Notification Title"
-            android:inputType="textCapSentences" />
-    </android.support.design.widget.TextInputLayout>
+            android:background="#dcdcdc"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/abc"
-        android:layout_margin="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/notificationMessage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Notification Message"
-            android:inputType="textCapSentences" />
-    </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/send"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:background="@drawable/btn_bg"
 
-        android:inputType="text"
-        android:text="Send Notification"
-        android:textColor="#fff" />
+                    <Button
+                        android:id="@+id/sent"
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/btn_bg"
+
+                        android:inputType="text"
+                        android:text="View Sent Notifications"
+                        android:textColor="#fff" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="Notification to all"
+                        android:textColor="#000" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/abc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/notificationTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Notification Title"
+                            android:inputType="textCapSentences"
+                            android:textSize="13sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/abc"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/notificationMessage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Notification Message"
+                            android:inputType="textCapSentences"
+                            android:textSize="13sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/send"
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/btn_bg"
+
+                        android:inputType="text"
+                        android:text="Send Notifications"
+                        android:textColor="#fff" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="Notification about brand"
+                        android:textColor="#000" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/notificationTitle1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Notification Title"
+                            android:inputType="textCapSentences"
+                            android:textSize="13sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/notificationMessage1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Notification Message"
+                            android:inputType="textCapSentences"
+                            android:textSize="13sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Choose brand" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                    </Spinner>
+
+                    <Button
+                        android:id="@+id/sendBrandNotification"
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/btn_bg"
+
+                        android:inputType="text"
+                        android:text="Send Notifications"
+                        android:textColor="#fff" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="Notification about Product"
+                        android:textColor="#000" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/notificationTitle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Notification Title"
+                            android:inputType="textCapSentences"
+                            android:textSize="13sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/notificationMessage2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Notification Message"
+                            android:inputType="textCapSentences"
+                            android:textSize="13sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/productChosen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="5dp"
+                        android:text="Choose Product" />
+
+                    <Button
+                        android:id="@+id/sendProductNotification"
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/btn_bg"
+
+                        android:inputType="text"
+                        android:text="Send Notifications"
+                        android:textColor="#fff" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

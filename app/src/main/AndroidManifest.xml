@@ -57,7 +57,8 @@
         <activity android:name=".Activities.DeliveryCharges" />
         <activity android:name=".Activities.ViewInvoice" />
         <activity android:name=".Activities.ListOfBills" />
-        <activity android:name=".Activities.SendNotifications" />
+        <activity android:name=".Activities.SendNotifications"
+            />
         <activity android:name=".Activities.CustomerList" />
         <activity android:name=".Activities.ViewCustomer" />
         <activity android:name=".Activities.BannerSettings" />
@@ -95,6 +96,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".Activities.UploadProductsFile"></activity>
+        <activity android:name=".Activities.NotificationHistory"></activity>
     </application>
 
 </manifest>
